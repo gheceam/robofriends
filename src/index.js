@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Card from './Card'
+import CardList from './CardList'
 import * as serviceWorker from './serviceWorker';
 import 'tachyons'
 import {robots} from './robots';
@@ -9,19 +9,7 @@ import {robots} from './robots';
 // Uses the ReactDOM package Render() function to render our app in the
 // root element
 ReactDOM.render(
-  <React.StrictMode>
-    <div>
-      {/* The various properties in these jsx tags are actually
-      properties we are passing to the Card.js components in the
-      'props' argument (see: Card.js file for more info)
-      we are getting id, name, email from the objects (json) in 
-      array 'robots' inside the robots.js file  */}
-      <Card id={robots[0].id} name={robots[0].name} email={robots[0].email}/>
-      <Card id={robots[1].id} name={robots[1].name} email={robots[1].email}/>
-      <Card id={robots[2].id} name={robots[2].name} email={robots[2].email}/>
-      <Card id={robots[3].id} name={robots[3].name} email={robots[3].email}/>
-    </div>
-  </React.StrictMode>,
+      <CardList robots={robots}/>,
   document.getElementById('root')
 );
 
